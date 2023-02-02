@@ -23,7 +23,11 @@ export function needsLicense(kind) {
  * @returns {string} a sentence of advice which option to choose
  */
 export function chooseVehicle(option1, option2) {
-  return option1 < option2 ? `${option1} is clearly the better choice.` : `${option2} is clearly the better choice.`;
+  if (option1 < option2) {
+    return `${option1} is clearly the better choice.`;
+  } else {
+    return `${option2} is clearly the better choice.`;
+  }
 }
 
 /**
